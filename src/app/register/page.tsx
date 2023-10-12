@@ -48,32 +48,32 @@ const Register = (props: Props) => {
 
           {/* form */}
           <div className="grid grid-cols-2 gap-2 mt-5">
-            <div className="flex flex-col items-start justify-start mt-2 gap-1">
+            <div className="input-wrap">
               <p className="text-sm font-semibold tracking-wider">Full Name</p>
               <input
                 placeholder={`Enter ${
                   !selector ? "student's" : "teacher's"
                 } name`}
                 type="text"
-                className="bg-[whitesmoke] px-10 py-3 rounded-md outline-none border-slate-900/80 border-[1.5px] w-full placeholder:text-sm placeholder:text-slate-500"
+                className="input"
               />
             </div>
 
             {!selector && (
-              <div className="flex flex-col items-start justify-start mt-2 gap-1">
+              <div className="input-wrap">
                 <p className="text-sm font-semibold tracking-wider">
                   Gaurdian's Name
                 </p>
                 <input
                   placeholder={`Enter name of gaurdian ( father/ mother/ relative )`}
                   type="text"
-                  className="bg-[whitesmoke] px-10 py-3 rounded-md outline-none border-slate-900/80 border-[1.5px] w-full placeholder:text-sm placeholder:text-slate-500"
+                  className="input"
                 />
               </div>
             )}
 
             <div
-              className={`flex flex-col items-start justify-start mt-2 gap-1 ${
+              className={`input-wrap ${
                 !selector && "col-span-2"
               }`}
             >
@@ -85,56 +85,78 @@ const Register = (props: Props) => {
                   !selector ? "student's gaurdian" : "teacher's"
                 } mobile number`}
                 type="text"
-                className="bg-[whitesmoke] px-10 py-3 rounded-md outline-none border-slate-900/80 border-[1.5px] w-full placeholder:text-sm placeholder:text-slate-500"
+                className="input"
               />
             </div>
 
             {selector && (
-              <div className="flex flex-col items-start justify-start mt-2 gap-1 col-span-2">
-                <p className="text-sm font-semibold tracking-wider">
-                  Email address
-                </p>
-                <input
-                  placeholder={`Enter teacher's email address`}
-                  type="text"
-                  className="bg-[whitesmoke] px-10 py-3 rounded-md outline-none border-slate-900/80 border-[1.5px] w-full placeholder:text-sm placeholder:text-slate-500"
-                />
-              </div>
+              <>
+                <div className="input-wrap ">
+                  <p className="text-sm font-semibold tracking-wider">
+                    Email address
+                  </p>
+                  <input
+                    placeholder={`Enter teacher's email address`}
+                    type="text"
+                    className="input"
+                  />
+                </div>
+                <div className="input-wrap">
+                  <p className="text-sm font-semibold tracking-wider">
+                    Enter Password
+                  </p>
+                  <input
+                    placeholder={`Enter Login password`}
+                    type="text"
+                    className="input"
+                  />
+                </div>
+              </>
             )}
 
-            <div className="flex flex-col items-start justify-start mt-2 gap-1">
+            <div className="input-wrap">
               <p className="text-sm font-semibold tracking-wider">
                 Select City
               </p>
               <input
                 placeholder={`Select City`}
                 type="text"
-                className="bg-[whitesmoke] px-10 py-3 rounded-md outline-none border-slate-900/80 border-[1.5px] w-full placeholder:text-sm placeholder:text-slate-500"
+                className="input"
               />
             </div>
 
-            <div className="flex flex-col items-start justify-start mt-2 gap-1">
+            <div className="input-wrap">
               <p className="text-sm font-semibold tracking-wider">
                 Select State
               </p>
               <input
                 placeholder={`Select state`}
                 type="text"
-                className="bg-[whitesmoke] px-10 py-3 rounded-md outline-none border-slate-900/80 border-[1.5px] w-full placeholder:text-sm placeholder:text-slate-500"
+                className="input"
               />
             </div>
 
             <div
-              className={`flex flex-col items-start justify-start mt-2 gap-1 col-span-2`}
+              className={`input-wrap col-span-2`}
             >
               <p className="text-sm font-semibold tracking-wider">Code</p>
               <input
                 placeholder={`Enter centre code`}
                 type="text"
-                className="bg-[whitesmoke] px-10 py-3 rounded-md outline-none border-slate-900/80 border-[1.5px] w-full placeholder:text-sm placeholder:text-slate-500"
+                className="input"
               />
             </div>
           </div>
+
+          <p className="mt-5 text-sm tracking-wide font-light">
+            Already registered?
+            <span>
+              <a className="font-semibold text-slate-900" href="/login">
+                {" "}
+                login here.
+              </a>
+            </span>
+          </p>
 
           <div className="mt-5 flex items-center justify-end">
             <button className="bg-slate-500 px-8 py-2 text-sm rounded-md shadow-md shadow-black/20 active:scale-[0.98] text-white hover:text-slate-200 hover:bg-slate-600 transition-all duration-200 ease-linear">

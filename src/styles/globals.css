@@ -26,4 +26,12 @@
   [data-select="true"] {
     @apply right-0;
   }
+
+  .input-wrap {
+    @apply flex flex-col items-start justify-start mt-2 gap-1;
+  }
+
+  .input {
+    @apply bg-[whitesmoke] px-10 py-3 rounded-md outline-none border-slate-900/80 border-[1.5px] w-full placeholder:text-sm placeholder:text-slate-500;
+  }
 }
