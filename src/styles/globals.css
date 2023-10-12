@@ -14,4 +14,16 @@
   [data-collapse="true"] {
     @apply w-[6rem];
   }
+
+  .registerSelector {
+    @apply absolute top-0 bg-slate-900/40 h-full w-[50%] rounded-full transition-all ease-linear duration-200;
+  }
+
+  [data-select="false"] {
+    @apply left-0;
+  }
+
+  [data-select="true"] {
+    @apply right-0;
+  }
 }
