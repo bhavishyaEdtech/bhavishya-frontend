@@ -4,6 +4,7 @@ import { sidebarOptions } from "@/utils/SidebarRoutes";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { BiLogOutCircle as Logout } from "react-icons/bi";
+import Link from "next/link";
 
 type SidebarProps = {
   open: boolean;
@@ -12,7 +13,7 @@ type SidebarProps = {
 
 export default function Sidebar({ open, setOpen }: SidebarProps) {
   const currentRoute = usePathname();
-  const [active, setActive] = useState(false);
+
   const [collapse, setCollapsed] = useState(false);
 
   const collapsible = (e: any) => {
@@ -32,7 +33,7 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
         onClick={collapsible}
         className={`rounded-full bg-slate-900 bg-primary_100 xl:p-[10px] p-2 focus:outline-none ${
           !collapse ? "rotate-180" : "rotate-0"
-        } hidden md:flex items-center justify-center absolute right-[-15px] top-[30%] `}
+        } hidden md:flex items-center justify-center absolute right-[-15px] top-[27%] `}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -68,25 +69,27 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
         </div>
 
         <div
-          className={`mt-10 flex flex-col justify-between items-center w-full px-5 gap-3 flex-grow ${
+          className={`mt-10 flex flex-col justify-between items-center w-full px-5 flex-grow ${
             collapse && "items-center"
           }`}
         >
-          <div className="w-full">
+          <div className="w-full flex flex-col justify-start items-start gap-3">
             {sidebarOptions.map((data) => (
               <>
-                <div
-                  className={`group flex items-center justify-start py-4 px-5 w-full rounded-md gap-3 text-slate-300 shadow-black/20 cursor-pointer transition-all duration-300 ease-linear ${
-                    currentRoute === data.src &&
-                    "!text-white bg-white/10 shadow-md"
-                  } hover:text-white hover:bg-white/10 hover:shadow-md`}
-                  key={data.id}
-                >
-                  <p className="">{data.icon}</p>
-                  <p className={`text-sm ${collapse && "hidden"}`}>
-                    {data.name}
-                  </p>
-                </div>
+                <Link href={data.src} className="w-full">
+                  <div
+                    className={`group flex items-center justify-start py-4 px-5 w-full rounded-md gap-3 text-slate-300 shadow-black/20 cursor-pointer transition-all duration-300 ease-linear ${
+                      currentRoute === data.src &&
+                      "!text-white bg-white/10 shadow-md"
+                    } hover:text-white hover:bg-white/10 hover:shadow-md`}
+                    key={data.id}
+                  >
+                    <p>{data.icon}</p>
+                    <p className={`text-sm ${collapse && "hidden"}`}>
+                      {data.name}
+                    </p>
+                  </div>
+                </Link>
               </>
             ))}
           </div>
@@ -94,7 +97,7 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
           <div
             className={`group flex items-center justify-start py-4 px-5 w-full rounded-md gap-3 text-slate-300 shadow-black/20 cursor-pointer transition-all duration-300 ease-linear hover:text-white hover:bg-white/10 hover:shadow-md `}
           >
-            <p className="">
+            <p>
               <Logout className="h-[20px] w-[20px]" />
             </p>
             <p className={`text-sm ${collapse && "hidden"}`}>Log out</p>

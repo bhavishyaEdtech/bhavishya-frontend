@@ -17,24 +17,24 @@ export const sidebarOptions = [
     id: 2,
     name: "upload videos",
     icon: <Video className="h-[20px] w-[20px]" />,
-    src: "",
+    src: "/dashboard/videos/upload",
   },
   {
     id: 3,
     name: "admin management",
     icon: <Admin className="h-[20px] w-[20px]" />,
-    src: "",
+    src: "/dashboard/management/admin",
   },
   {
     id: 4,
     name: "teacher management",
     icon: <Teacher className="h-[20px] w-[20px]" />,
-    src: "",
+    src: "/dashboard/management/teacher",
   },
   {
     id: 5,
     name: "settings",
     icon: <Settings className="h-[20px] w-[20px]" />,
-    src: "",
+    src: "/dashboard/settings",
   },
 ];
