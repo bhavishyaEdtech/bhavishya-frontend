@@ -6,12 +6,9 @@ import { useState } from "react";
 import { BiLogOutCircle as Logout } from "react-icons/bi";
 import Link from "next/link";
 
-type SidebarProps = {
-  open: boolean;
-  setOpen: (value: React.SetStateAction<boolean>) => void;
-};
+type SidebarProps = {};
 
-export default function Sidebar({ open, setOpen }: SidebarProps) {
+export default function Sidebar({}: SidebarProps) {
   const currentRoute = usePathname();
 
   const [collapse, setCollapsed] = useState(false);
@@ -22,13 +19,7 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
   };
 
   return (
-    <div
-      className={`${
-        open
-          ? "z-[50] w-4/6 md:w-4/12 fixed block left-0 top-0 scale-x-1 transition origin-left duration-300"
-          : "relative hidden md:block"
-      } z-30`}
-    >
+    <div className={`relative hidden md:block z-30`}>
       <button
         onClick={collapsible}
         className={`rounded-full bg-slate-900 bg-primary_100 xl:p-[10px] p-2 focus:outline-none ${
@@ -54,7 +45,7 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
         <div
           className={`flex flex-col justify-start items-start ${
             collapse && "items-center"
-          } ${open && "mt-16"} w-full px-10`}
+          } w-full px-10`}
         >
           <h1 className={`text-white text-xl font-semibold uppercase `}>
             {!collapse ? "Bhavishya Edtech" : "BE"}
