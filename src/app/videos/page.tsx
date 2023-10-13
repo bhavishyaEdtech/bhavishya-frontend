@@ -23,9 +23,11 @@ const VideosPage = (props: Props) => {
           <GridContainer>
             {arr.map((data) => (
               <Card key={data} className="p-2">
-                <div className="relative w-full min-h-[200px] bg-black rounded-md overflow-hidden">
+                <div className="relative w-full min-h-[200px] bg-black/20 rounded-md overflow-hidden">
                   <Image
-                    src={""}
+                    src={
+                      "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZWR1Y2F0aW9ufGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                    }
                     alt="image"
                     fill
                     className="object-center object-cover"
