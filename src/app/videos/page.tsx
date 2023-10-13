@@ -6,11 +6,14 @@ import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import React from "react";
 import { BsFillPlayFill as PlayButton } from "react-icons/bs";
+import { useRouter } from "next/navigation";
 
 type Props = {};
 
 const VideosPage = (props: Props) => {
-  const arr = [1, 2, 3, 4, 5, 6];
+  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+  const router = useRouter();
+
   return (
     <>
       <Navbar />
@@ -46,6 +49,9 @@ const VideosPage = (props: Props) => {
 
                 <div className="my-3 px-3 w-full flex items-center justify-end">
                   <button
+                    onClick={() => {
+                      router.push(`/videos/${data}`);
+                    }}
                     className="bg-slate-900/30 rounded-lg p-2 active:scale-[0.98] hover:bg-black/30
                 transition-all ease-linear duration-200 flex items-center justify-center gap-1"
                   >

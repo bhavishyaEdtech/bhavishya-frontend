@@ -1,14 +1,16 @@
 "use client";
 import Card from "@/components/Card";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 type Props = {};
 
 const Login = (props: Props) => {
   const [selector, setSelector] = useState(false);
+  const router = useRouter();
 
   return (
-    <div className="h-screen flex items-center justify-center bg-black/10">
+    <div className="h-screen flex items-center justify-center bg-black/10 relative">
       <div className="w-full max-w-4xl min-h-[80%]">
         <Card className="relative">
           <div className="absolute right-0 px-10 top-0 py-5 w-[400px]">
@@ -134,6 +136,14 @@ const Login = (props: Props) => {
           </div>
         </Card>
       </div>
+      <button
+        onClick={() => {
+          router.push("/dashboard");
+        }}
+        className="bg-slate-500 px-8 py-2 text-sm rounded-md shadow-md shadow-black/20 active:scale-[0.98] text-white hover:text-slate-200 hover:bg-slate-600 transition-all duration-200 ease-linear absolute top-5 right-5"
+      >
+        Login as admin
+      </button>
     </div>
   );
 };
